@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -20,14 +18,8 @@ public class BraveStamina : MonoBehaviour
         sli.value = 1;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Jump"))
-        {
-            _gameManager.IsGame = true;
-        }
-
         if (_gameManager.IsGame)
         {
             _time += Time.deltaTime;

@@ -22,5 +22,9 @@ public class Text1 : MonoBehaviour
             _index++;
             _time = 0f;
         }
+        else
+        {
+
+        }
     }
 }

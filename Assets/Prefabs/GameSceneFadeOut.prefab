@@ -141,7 +141,7 @@ GameObject:
   - component: {fileID: 1937668829364220412}
   - component: {fileID: 6827649206637282456}
   m_Layer: 5
-  m_Name: FadeOut
+  m_Name: GameSceneFadeOut
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -16,4 +16,10 @@ public class Fade : MonoBehaviour
     {
         SceneManager.LoadScene("TitleScene");
     }
+
+    public void GameStart()
+    {
+        var gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        gameManager.IsGame = true;
+    }
 }
