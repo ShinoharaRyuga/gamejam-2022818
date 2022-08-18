@@ -36,7 +36,6 @@ public class BraveStamina : MonoBehaviour
             {
                 _isLose = true;
                 _gameManager.ReduceChallenger();
-                Debug.Log("•‰‚¯");
                 return;
             }
         }
