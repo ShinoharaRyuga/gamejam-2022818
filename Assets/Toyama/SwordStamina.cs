@@ -23,6 +23,11 @@ public class SwordStamina : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            _currentStamina += 1;
+        }
+       
         if (_gameManager.IsGame)
         {
             _time += Time.deltaTime;
@@ -38,6 +43,5 @@ public class SwordStamina : MonoBehaviour
                 return;
             }
         }
-      
     }
 }

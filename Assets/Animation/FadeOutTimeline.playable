@@ -104,7 +104,7 @@ MonoBehaviour:
     m_TimeScale: 1
     m_ParentTrack: {fileID: 5629780445987742559}
     m_EaseInDuration: 0
-    m_EaseOutDuration: 3
+    m_EaseOutDuration: 1
     m_BlendInDuration: -1
     m_BlendOutDuration: -1
     m_MixInCurve:
