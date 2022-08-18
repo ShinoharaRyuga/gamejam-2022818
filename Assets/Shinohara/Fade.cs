@@ -1,8 +1,11 @@
+using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class Fade : MonoBehaviour
 {
+    Text _startText = default;
     public void ThisDestroy()
     {
         Destroy(gameObject);

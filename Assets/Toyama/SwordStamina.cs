@@ -7,6 +7,7 @@ public class SwordStamina : MonoBehaviour
 {
     [SerializeField] float _maxStamina = 0f;
     [SerializeField] float _currentStamina = 0f;
+    [SerializeField] float _addStamina = 1f;
     [SerializeField] float _time = 0f;
     [SerializeField] float _damage = 1f;
     [SerializeField] float _nowTime;
@@ -25,7 +26,10 @@ public class SwordStamina : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.S))
         {
-            _currentStamina += 1;
+            if (_currentStamina < _maxStamina)
+            {
+                _currentStamina += _addStamina;
+            }
         }
        
         if (_gameManager.IsGame)

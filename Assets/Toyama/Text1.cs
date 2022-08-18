@@ -8,8 +8,10 @@ public class Text1 : MonoBehaviour
     [SerializeField] string _talks = "";
     [SerializeField] Text _textLabel;
     [SerializeField] float _nowTime = 1f;
+    [SerializeField] float _waitTime = 1f;
     private float _time = 0;
 
+    bool _isEnd = false; 
     int _index = 0;
     private void Update()
     {
@@ -21,10 +23,18 @@ public class Text1 : MonoBehaviour
             _textLabel.text = str;
             _index++;
             _time = 0f;
+            
         }
-        else
+        else if(_talks.Length <= _index && !_isEnd)
         {
-
+            _isEnd = true;
+            StartCoroutine(DestroyThis());
         }
+    }
+
+    IEnumerator DestroyThis()
+    {
+        yield return new WaitForSeconds(_waitTime);
+        Destroy(gameObject);
     }
 }
