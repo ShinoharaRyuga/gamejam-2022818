@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SwordStamina : MonoBehaviour
 {
@@ -9,10 +10,12 @@ public class SwordStamina : MonoBehaviour
     [SerializeField] float _time = 0f;
     [SerializeField] float _damage = 1f;
     [SerializeField] float _nowTime;
+    [SerializeField] Slider sli;
 
     void Start()
     {
         _currentStamina = _maxStamina;
+        sli.value = 1;
     }
 
     // Update is called once per frame
@@ -24,6 +27,7 @@ public class SwordStamina : MonoBehaviour
         {
             _currentStamina -= _damage;
             _time = 0f;
+            sli.value = (float)_currentStamina / (float)_maxStamina;
         }
         else
         {

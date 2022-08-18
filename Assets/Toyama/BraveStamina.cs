@@ -15,6 +15,7 @@ public class BraveStamina : MonoBehaviour
     void Start()
     {
         _currentStamina = _maxStamina;
+        sli.value = 1;
     }
 
     // Update is called once per frame
@@ -26,7 +27,7 @@ public class BraveStamina : MonoBehaviour
         {
             _currentStamina -= _damage;
             _time = 0f;
-
+            sli.value = (float)_currentStamina / (float)_maxStamina;
         }
         else
         {
