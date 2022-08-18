@@ -13,11 +13,13 @@ public class GameManager : MonoBehaviour
     [SerializeField] string _gameoverscene;
     [SerializeField] Fade _fadeInPrefab = default;
     [SerializeField] Fade _fadeOutPrefab = default;
-
+    [SerializeField, Tooltip("勇者,商人,盗賊のプレハブをアタッチ")] 
+    BraveStamina[] _challengers = default;
+    /// <summary>現在の挑戦中の挑戦者 </summary>
+    BraveStamina _currentChallenger = default;
     bool _isGame = false;
 
     public int Noruma { get => _noruma; set => _noruma = value; }
-    public int Nokori { get => _nokori; set => _nokori = value; }
     public bool IsGame { get => _isGame; set => _isGame = value; }
 
     private void Awake()
@@ -38,18 +40,37 @@ public class GameManager : MonoBehaviour
     {
         if(_isGame)
         {
-            if (_nokori < 0)
+            if (_nokori <= 0)
             {
                 GameClear();
+                _isGame = false;
             }
         }
     }
 
+    /// <summary>スタートボタンが押されたらフェードインオブジェクトを生成する </summary>
     public void GameSceneChange()
     {
         Instantiate(_fadeInPrefab);
     }
 
+    /// <summary>残り人数を減らし、次の挑戦者を決める </summary>
+    public void ReduceChallenger()
+    {
+        _nokori--;
+        SetNextChallenger();
+    }
+
+    /// <summary>ランダムで次の挑戦者を決める </summary>
+    public void SetNextChallenger()
+    {
+        var index = Random.Range(0, _challengers.Length);
+        _currentChallenger = _challengers[index];
+        Instantiate(_currentChallenger);
+        Debug.Log(_challengers[index].gameObject.name);
+    }
+
+    /// <summary>フェードアウトオブジェクトを生成する </summary>
     void GameSceneLoad(Scene scene, LoadSceneMode mode)
     {
         if (scene.name == "GameScene")
@@ -60,7 +81,8 @@ public class GameManager : MonoBehaviour
 
     void GameClear()
     {
-        SceneManager.LoadScene(_clearscene);
+        // SceneManager.LoadScene(_clearscene);
+        Debug.Log("クリア");
     }
     void GameOver()
     {

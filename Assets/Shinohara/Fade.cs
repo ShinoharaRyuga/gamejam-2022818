@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class Fade : MonoBehaviour
 {
     Text _startText = default;
+    GameManager _gameManager = default;
     public void ThisDestroy()
     {
         Destroy(gameObject);
@@ -15,14 +16,22 @@ public class Fade : MonoBehaviour
     {
         SceneManager.LoadScene("GameScene");
     }
+
     public void GameOverSceneChage()
     {
         SceneManager.LoadScene("TitleScene");
     }
 
+    public void SetFirstChallenger()
+    {
+        _gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        _gameManager.SetNextChallenger();
+        Debug.Log("呼ばれた");
+    }
+
     public void GameStart()
     {
-        var gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
-        gameManager.IsGame = true;
+        _gameManager.IsGame = true;
+        Debug.Log("ゲームスタート");
     }
 }
