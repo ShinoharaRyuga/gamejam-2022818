@@ -13,6 +13,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] string gameoverscene;
     bool game;
 
+    public int Noruma { get => noruma; set => noruma = value; }
+    public int Nokori { get => nokori; set => nokori = value; }
+
     void Start()
     {
         
@@ -21,10 +24,14 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(nokori < 0 )
+        if(game)
         {
-            GameClear();
+            if (nokori < 0)
+            {
+                GameClear();
+            }
         }
+    
     }
     void GameClear()
     {
