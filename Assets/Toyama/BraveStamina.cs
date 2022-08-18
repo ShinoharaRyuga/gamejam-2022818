@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BraveStamina : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class BraveStamina : MonoBehaviour
     [SerializeField] float _time = 0f;
     [SerializeField] float _damage = 1f;
     [SerializeField] float _nowTime;
+    [SerializeField] Slider sli;
 
     void Start()
     {
@@ -24,6 +26,7 @@ public class BraveStamina : MonoBehaviour
         {
             _currentStamina -= _damage;
             _time = 0f;
+
         }
         else
         {
