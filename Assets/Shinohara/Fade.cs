@@ -12,4 +12,8 @@ public class Fade : MonoBehaviour
     {
         SceneManager.LoadScene("GameScene");
     }
+    public void GameOverSceneChage()
+    {
+        SceneManager.LoadScene("TitleScene");
+    }
 }
