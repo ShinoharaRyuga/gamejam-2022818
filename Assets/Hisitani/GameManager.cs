@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] int noruma;
     [SerializeField] string clearscene;
     [SerializeField] string gameoverscene;
+    bool game;
 
     void Start()
     {
