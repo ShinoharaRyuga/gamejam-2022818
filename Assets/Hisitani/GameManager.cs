@@ -14,10 +14,11 @@ public class GameManager : MonoBehaviour
     [SerializeField] Fade _fadeInPrefab = default;
     [SerializeField] Fade _fadeOutPrefab = default;
 
-    bool _game = false;
+    bool _isGame = false;
 
     public int Noruma { get => _noruma; set => _noruma = value; }
     public int Nokori { get => _nokori; set => _nokori = value; }
+    public bool IsGame { get => _isGame; set => _isGame = value; }
 
     private void Awake()
     {
@@ -35,7 +36,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if(_game)
+        if(_isGame)
         {
             if (_nokori < 0)
             {

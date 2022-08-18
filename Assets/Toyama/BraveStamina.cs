@@ -12,8 +12,10 @@ public class BraveStamina : MonoBehaviour
     [SerializeField] float _nowTime;
     [SerializeField] Slider sli;
 
+    GameManager _gameManager = default;
     void Start()
     {
+        _gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         _currentStamina = _maxStamina;
         sli.value = 1;
     }
@@ -21,17 +23,25 @@ public class BraveStamina : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _time += Time.deltaTime;
-
-        if (_nowTime < _time)
+        if (Input.GetButtonDown("Jump"))
         {
-            _currentStamina -= _damage;
-            _time = 0f;
-            sli.value = (float)_currentStamina / (float)_maxStamina;
+            _gameManager.IsGame = true;
         }
-        else
+
+        if (_gameManager.IsGame)
         {
-            return;
+            _time += Time.deltaTime;
+
+            if (_nowTime < _time && 0 < _currentStamina)
+            {
+                _currentStamina -= _damage;
+                _time = 0f;
+                sli.value = (float)_currentStamina / (float)_maxStamina;
+            }
+            else
+            {
+                return;
+            }
         }
     }
 }
