@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SwordStamina : MonoBehaviour
+public class BraveStamina : MonoBehaviour
 {
     [SerializeField] float _maxStamina = 0f;
     [SerializeField] float _currentStamina = 0f;
