@@ -65,10 +65,17 @@ public class GameManager : MonoBehaviour
     /// <summary>ƒ‰ƒ“ƒ_ƒ€‚ÅŸ‚Ì’§íÒ‚ğŒˆ‚ß‚é </summary>
     public void SetNextChallenger()
     {
-        var index = Random.Range(0, _challengers.Length);
-        _challengers[index] = _challengers[index + 1];
+        foreach (var c in _gameSceneChallengers)
+        {
+            if (c != null)
+            {
+                c.gameObject.SetActive(false);
+            }
+        }
+
+        var index = Random.Range(0, _challengers.Length - 1);
         _currentChallenger = _challengers[index];
-        _currentChallenger.gameObject.SetActive(true);
+         _gameSceneChallengers[index].gameObject.SetActive(true);
         Instantiate(_currentChallenger);
         Debug.Log(_challengers[index].gameObject.name);
     }
@@ -85,10 +92,8 @@ public class GameManager : MonoBehaviour
             _gameSceneChallengers[0] = Brave;
             _gameSceneChallengers[1] = Merchant;
 
-            foreach (var c in _challengers)
-            {
-                c.gameObject.SetActive(false);
-            }
+            Brave.gameObject.SetActive(false);
+            Merchant.gameObject.SetActive(false);
         }
     }
 
