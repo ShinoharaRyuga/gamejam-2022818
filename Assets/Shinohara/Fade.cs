@@ -26,7 +26,6 @@ public class Fade : MonoBehaviour
     {
         _gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         _gameManager.SetNextChallenger();
-        Debug.Log("�Ă΂ꂽ");
     }
 
     public void GameStart()

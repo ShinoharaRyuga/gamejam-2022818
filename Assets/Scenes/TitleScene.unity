@@ -835,7 +835,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddae3b882a76f424d928cbe27f87e661, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _nokori: 3
+  _nokori: 10
   _noruma: 10
   _clearscene: 
   _gameoverscene: 

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
@@ -18,7 +19,8 @@ public class GameManager : MonoBehaviour
     /// <summary>åªç›ÇÃíßêÌíÜÇÃíßêÌé“ </summary>
     BraveStamina _currentChallenger = default;
     bool _isGame = false;
-
+    Text _nokoriText = default;
+    GameObject[] _gameSceneChallengers = new GameObject[3];
     public int Noruma { get => _noruma; set => _noruma = value; }
     public bool IsGame { get => _isGame; set => _isGame = value; }
 
@@ -58,14 +60,24 @@ public class GameManager : MonoBehaviour
     public void ReduceChallenger()
     {
         _nokori--;
+        _nokoriText.text = $"{_nokori}êl";
         SetNextChallenger();
     }
 
     /// <summary>ÉâÉìÉ_ÉÄÇ≈éüÇÃíßêÌé“ÇåàÇﬂÇÈ </summary>
     public void SetNextChallenger()
     {
-        var index = Random.Range(0, _challengers.Length);
+        foreach (var c in _gameSceneChallengers)
+        {
+            if (c != null)
+            {
+                c.gameObject.SetActive(false);
+            }
+        }
+
+        var index = Random.Range(0, _challengers.Length - 1);
         _currentChallenger = _challengers[index];
+         _gameSceneChallengers[index].gameObject.SetActive(true);
         Instantiate(_currentChallenger);
         Debug.Log(_challengers[index].gameObject.name);
     }
@@ -76,6 +88,21 @@ public class GameManager : MonoBehaviour
         if (scene.name == "GameScene")
         {
             Instantiate(_fadeOutPrefab);
+            _nokoriText = GameObject.Find("nokoriText").GetComponent<Text>();
+            var Brave = GameObject.Find("Brave");
+            var Merchant = GameObject.Find("Merchant");
+
+            _gameSceneChallengers[0] = Brave;
+            _gameSceneChallengers[1] = Merchant;
+
+            Brave.gameObject.SetActive(false);
+            Merchant.gameObject.SetActive(false);
+        }
+        else if (scene.name == "TitleScene")
+        {
+            _nokori = 10;
+            var startButton = GameObject.Find("StartButton").GetComponent<Button>();
+            startButton.onClick.AddListener(() => GameSceneChange());
         }
     }
 
