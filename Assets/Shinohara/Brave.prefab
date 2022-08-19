@@ -101,3 +101,4 @@ MonoBehaviour:
   _damage: 5
   _reduceTime: 1
   _speed: 0.1
+  _name: Brave
