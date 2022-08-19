@@ -6,6 +6,8 @@ public class BraveStamina : MonoBehaviour
     [SerializeField] float _maxStamina = 0f;
     [SerializeField] float _damage = 1f;
     [SerializeField] float _reduceTime = 1f;
+    [SerializeField] float _speed = 0.5f;
+    [SerializeField] string _name = "Brave";
      Slider sli;
 
     float _currentStamina = 0f;
@@ -35,8 +37,17 @@ public class BraveStamina : MonoBehaviour
             else if(_currentStamina <= 0 && !_isLose)
             {
                 _isLose = true;
+                
                 _gameManager.ReduceChallenger();
                 return;
+            }
+            if(_isLose)
+            {
+                var a = GameObject.Find(_name).transform;
+                var pos = a.transform.position;
+                pos.y -= _speed;
+                a.transform.position = pos;
+
             }
         }
     }

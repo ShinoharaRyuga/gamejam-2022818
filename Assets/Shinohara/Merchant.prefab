@@ -100,4 +100,5 @@ MonoBehaviour:
   _maxStamina: 30
   _damage: 5
   _reduceTime: 1
-  sli: {fileID: 0}
+  _speed: 0.1
+  _name: Brave
