@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] string _gameoverscene;
     [SerializeField] Fade _fadeInPrefab = default;
     [SerializeField] Fade _fadeOutPrefab = default;
-    [SerializeField, Tooltip("勇者,商人,盗賊のプレハブをアタッチ")] 
+    [SerializeField, Tooltip("勇者,商人,盗賊のプレハブをアタッチ")]
     BraveStamina[] _challengers = default;
     /// <summary>現在の挑戦中の挑戦者 </summary>
     BraveStamina _currentChallenger = default;
@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if(_isGame)
+        if (_isGame)
         {
             if (_nokori <= 0)
             {
@@ -81,11 +81,11 @@ public class GameManager : MonoBehaviour
 
     void GameClear()
     {
-        // SceneManager.LoadScene(_clearscene);
+       // SceneManager.LoadScene("GameClearScene");
         Debug.Log("クリア");
     }
-    void GameOver()
+    public void GameOver()
     {
-        SceneManager.LoadScene(_gameoverscene);
+        SceneManager.LoadScene("GameOverScene");
     }
 }

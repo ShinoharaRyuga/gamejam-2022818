@@ -11,6 +11,7 @@ public class SwordStamina : MonoBehaviour
     [SerializeField] float _reduceTime = 1f;
     [SerializeField] Slider sli;
 
+    bool _dead = false;
     float _currentStamina = 0f;
     float _time = 0f;
     GameManager _gameManager = default;
@@ -41,9 +42,10 @@ public class SwordStamina : MonoBehaviour
                 _time = 0f;
                 sli.value = (float)_currentStamina / (float)_maxStamina;
             }
-            else
+            else if(_currentStamina <= 0 && !_dead)
             {
-                return;
+                _dead = true;
+                _gameManager.GameOver();
             }
         }
     }
