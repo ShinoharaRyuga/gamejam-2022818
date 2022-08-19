@@ -20,20 +20,10 @@ public class FallChallenger : MonoBehaviour
 
         if (_isFall)
         {
-            var pos = transform.position;
-            pos.y -= _speed;
-            transform.position = pos;
-
             if (transform.position.y <= _nextPosY[_currentIndex])
             {
                 _isFall = false;
                 _currentIndex++;
-                Debug.Log("tru");
-            }
-
-            if (_nextPosY.Length <= _currentIndex)
-            {
-               
             }
         }
     }

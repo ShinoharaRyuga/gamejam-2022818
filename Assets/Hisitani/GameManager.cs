@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     BraveStamina _currentChallenger = default;
     bool _isGame = false;
 
+    GameObject[] _gameSceneChallengers = new GameObject[3];
     public int Noruma { get => _noruma; set => _noruma = value; }
     public bool IsGame { get => _isGame; set => _isGame = value; }
 
@@ -65,7 +66,9 @@ public class GameManager : MonoBehaviour
     public void SetNextChallenger()
     {
         var index = Random.Range(0, _challengers.Length);
+        _challengers[index] = _challengers[index + 1];
         _currentChallenger = _challengers[index];
+        _currentChallenger.gameObject.SetActive(true);
         Instantiate(_currentChallenger);
         Debug.Log(_challengers[index].gameObject.name);
     }
@@ -76,6 +79,16 @@ public class GameManager : MonoBehaviour
         if (scene.name == "GameScene")
         {
             Instantiate(_fadeOutPrefab);
+            var Brave = GameObject.Find("Brave");
+            var Merchant = GameObject.Find("Merchant");
+
+            _gameSceneChallengers[0] = Brave;
+            _gameSceneChallengers[1] = Merchant;
+
+            foreach (var c in _challengers)
+            {
+                c.gameObject.SetActive(false);
+            }
         }
     }
 

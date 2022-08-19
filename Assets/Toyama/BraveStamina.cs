@@ -39,7 +39,7 @@ public class BraveStamina : MonoBehaviour
             else if(_currentStamina <= 0 && !_isLose)
             {
                 _isLose = true;
-                _current = _gameManager.ReduceChallenger();
+                _gameManager.ReduceChallenger();
                 return;
             }
         }
