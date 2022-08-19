@@ -108,6 +108,11 @@ public class GameManager : MonoBehaviour
             var startButton = GameObject.Find("StartButton").GetComponent<Button>();
             startButton.onClick.AddListener(() => GameSceneChange());
         }
+        else if (scene.name == "GameOverScene")
+        {
+            var ninzu = GameObject.Find("ninzuu").GetComponent<Text>();
+            ninzu.text = _nokori.ToString();
+        }
     }
 
     void GameClear()

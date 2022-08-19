@@ -295,6 +295,7 @@ GameObject:
   - component: {fileID: 7063149781550476123}
   - component: {fileID: 7063149781550476124}
   - component: {fileID: 453681363}
+  - component: {fileID: 1223175443015151447}
   m_Layer: 0
   m_Name: Challenger RightHand
   m_TagString: Untagged
@@ -388,6 +389,26 @@ MonoBehaviour:
   - {fileID: 1912164816}
   - {fileID: 289992284}
   _stoppingDistance: 0.05
+--- !u!95 &1223175443015151447
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7063149781550476125}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: afd01dc3f5f0e054284bf84adba224a9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7063149781681230676
 GameObject:
   m_ObjectHideFlags: 0
