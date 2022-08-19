@@ -25,7 +25,7 @@ public class SwordStamina : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.S))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             if (_currentStamina < _maxStamina)
             {
