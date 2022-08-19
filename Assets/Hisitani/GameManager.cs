@@ -100,7 +100,7 @@ public class GameManager : MonoBehaviour
         }
         else if (scene.name == "TitleScene")
         {
-            _nokori = 20;
+            _nokori = 10;
             var startButton = GameObject.Find("StartButton").GetComponent<Button>();
             startButton.onClick.AddListener(() => GameSceneChange());
         }
