@@ -75,7 +75,7 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        var index = Random.Range(0, _challengers.Length - 1);
+        var index = Random.Range(0, _challengers.Length);
         _currentChallenger = _challengers[index];
          _gameSceneChallengers[index].gameObject.SetActive(true);
         Instantiate(_currentChallenger);
@@ -91,12 +91,16 @@ public class GameManager : MonoBehaviour
             _nokoriText = GameObject.Find("nokoriText").GetComponent<Text>();
             var Brave = GameObject.Find("Brave");
             var Merchant = GameObject.Find("Merchant");
+            var Thief = GameObject.Find("Thief");
 
             _gameSceneChallengers[0] = Brave;
             _gameSceneChallengers[1] = Merchant;
+            _gameSceneChallengers[2] = Thief;
+
 
             Brave.gameObject.SetActive(false);
             Merchant.gameObject.SetActive(false);
+            Thief.gameObject.SetActive(false);
         }
         else if (scene.name == "TitleScene")
         {
