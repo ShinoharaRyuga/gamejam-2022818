@@ -5,31 +5,23 @@ using UnityEngine;
 public class SwordController : MonoBehaviour
 {
     /// <summary>移動させたいオブジェクト</summary>
-    [SerializeField] Transform _sword;
+    [SerializeField] [Tooltip("移動させたいオブジェクト")] Transform _go;
     Vector2 _pos;
-    /// <summary>オブジェクトの移動量</summary>
-    [SerializeField] float _movement;
-    float _timer;
-    [SerializeField] float _foldingtime;
-    void Update()
-    {
-        _timer += Time.deltaTime;
-    }
+    [SerializeField] [Tooltip("移動速度")] float _moveSpeed;
+    [SerializeField] Transform[] _targets;
+    [SerializeField] float _stoppingDistance;
+    int _currentTargetIndex;
     private void FixedUpdate()
     {
-        _pos = _sword.position;
-        if (_timer < _foldingtime)
+        float distance = Vector2.Distance(transform.position, _targets[_currentTargetIndex % _targets.Length].position);
+        if (distance > _stoppingDistance)
         {
-            _pos.y += _movement;
-        }
-        else if (_timer > _foldingtime && _timer < _foldingtime * 2)
-        {
-            _pos.y -= _movement;
+            Vector3 dir = (_targets[_currentTargetIndex % _targets.Length].transform.position - transform.position).normalized * _moveSpeed;
+            _go.transform.Translate(dir * Time.deltaTime);
         }
         else
         {
-            _timer = 0;
+            _currentTargetIndex++;
         }
-        _sword.position = _pos;
     }
 }
