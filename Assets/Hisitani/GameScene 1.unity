@@ -153,7 +153,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &17374572
 MonoBehaviour:
@@ -277,7 +277,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &356154519
 GameObject:
@@ -446,7 +446,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 2.099, y: -0.052, z: -0.001}
 --- !u!114 &399386349
 MonoBehaviour:
@@ -598,7 +598,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3242649155047333438, guid: 7eb4c48e4685ad24c8dfe2155626704c, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3242649155047333438, guid: 7eb4c48e4685ad24c8dfe2155626704c, type: 3}
       propertyPath: m_AnchorMax.x
@@ -1051,7 +1051,7 @@ RectTransform:
   - {fileID: 472372467}
   - {fileID: 101477818}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1203,7 +1203,7 @@ Transform:
   - {fileID: 356154521}
   - {fileID: 421709209}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1295484096
 PrefabInstance:
@@ -1230,7 +1230,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8409829309112677168, guid: 616571af19a3a6b469ca38eb0dda53b9, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8409829309112677168, guid: 616571af19a3a6b469ca38eb0dda53b9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1359,7 +1359,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1489417997
 GameObject:
@@ -1820,7 +1820,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2107056392
 PrefabInstance:
@@ -1835,7 +1835,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8409829309112677168, guid: 616571af19a3a6b469ca38eb0dda53b9, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8409829309112677168, guid: 616571af19a3a6b469ca38eb0dda53b9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1883,6 +1883,63 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 616571af19a3a6b469ca38eb0dda53b9, type: 3}
+--- !u!1001 &6605087877589950275
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3597623364040487431, guid: 3575e492393f51e4395ef440cea424bd, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3597623364040487431, guid: 3575e492393f51e4395ef440cea424bd, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -8.56
+      objectReference: {fileID: 0}
+    - target: {fileID: 3597623364040487431, guid: 3575e492393f51e4395ef440cea424bd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 9.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3597623364040487431, guid: 3575e492393f51e4395ef440cea424bd, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.39
+      objectReference: {fileID: 0}
+    - target: {fileID: 3597623364040487431, guid: 3575e492393f51e4395ef440cea424bd, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3597623364040487431, guid: 3575e492393f51e4395ef440cea424bd, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3597623364040487431, guid: 3575e492393f51e4395ef440cea424bd, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3597623364040487431, guid: 3575e492393f51e4395ef440cea424bd, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3597623364040487431, guid: 3575e492393f51e4395ef440cea424bd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3597623364040487431, guid: 3575e492393f51e4395ef440cea424bd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3597623364040487431, guid: 3575e492393f51e4395ef440cea424bd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6656331583174209692, guid: 3575e492393f51e4395ef440cea424bd, type: 3}
+      propertyPath: m_Name
+      value: Merchant
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3575e492393f51e4395ef440cea424bd, type: 3}
 --- !u!1001 &7063149781562230983
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1937,6 +1994,10 @@ PrefabInstance:
     - target: {fileID: 4233093817385367459, guid: e2c17dff9a688d645b0c1caf9bf5c830, type: 3}
       propertyPath: m_Name
       value: Brave
+      objectReference: {fileID: 0}
+    - target: {fileID: 4233093817385367459, guid: e2c17dff9a688d645b0c1caf9bf5c830, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e2c17dff9a688d645b0c1caf9bf5c830, type: 3}
