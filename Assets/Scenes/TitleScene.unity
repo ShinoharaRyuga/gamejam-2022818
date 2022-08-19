@@ -618,7 +618,7 @@ RectTransform:
   - {fileID: 1653987349}
   - {fileID: 1994684635}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -669,12 +669,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddae3b882a76f424d928cbe27f87e661, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _nokori: 0
-  _noruma: 0
+  _nokori: 3
+  _noruma: 10
   _clearscene: 
   _gameoverscene: 
   _fadeInPrefab: {fileID: 6355009153812627316, guid: fab6208a6b3e314458f24f260068f4a0, type: 3}
   _fadeOutPrefab: {fileID: 6827649206637282456, guid: 0e521d672c29ee244ba940669dbfbf45, type: 3}
+  _challengers:
+  - {fileID: 7603327955870923875, guid: ab67954357450b14d914c78af9d19305, type: 3}
+  - {fileID: 6564424673562164754, guid: 3baac1ee0b7f1a84b9cdbc265dbd4b9a, type: 3}
+  - {fileID: 5428472085489815619, guid: 532fbe4126876e84e8ed794e8b8d821c, type: 3}
 --- !u!1 &1361116999
 GameObject:
   m_ObjectHideFlags: 0
@@ -732,7 +736,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: a2eb449334617264385114a55678e698, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -757,7 +761,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1538210134
 GameObject:
@@ -1529,7 +1533,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2117279277
 GameObject:

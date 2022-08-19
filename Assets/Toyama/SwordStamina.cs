@@ -6,12 +6,13 @@ using UnityEngine.UI;
 public class SwordStamina : MonoBehaviour
 {
     [SerializeField] float _maxStamina = 0f;
-    [SerializeField] float _currentStamina = 0f;
-    [SerializeField] float _time = 0f;
+    [SerializeField] float _addStamina = 1f;
     [SerializeField] float _damage = 1f;
-    [SerializeField] float _nowTime;
+    [SerializeField] float _reduceTime = 1f;
     [SerializeField] Slider sli;
 
+    float _currentStamina = 0f;
+    float _time = 0f;
     GameManager _gameManager = default;
     void Start()
     {
@@ -20,14 +21,21 @@ public class SwordStamina : MonoBehaviour
         sli.value = 1;
     }
 
-    // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            if (_currentStamina < _maxStamina)
+            {
+                _currentStamina += _addStamina;
+            }
+        }
+       
         if (_gameManager.IsGame)
         {
             _time += Time.deltaTime;
 
-            if (_nowTime < _time && 0 < _currentStamina)
+            if (_reduceTime < _time && 0 < _currentStamina)
             {
                 _currentStamina -= _damage;
                 _time = 0f;
@@ -38,6 +46,5 @@ public class SwordStamina : MonoBehaviour
                 return;
             }
         }
-      
     }
 }
