@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2839613561986176830}
   - component: {fileID: 8161522457924634047}
   m_Layer: 0
-  m_Name: "\u76D7\u8CCA\u5DE6\u624B"
+  m_Name: LeftHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 2653841762494588725}
   - component: {fileID: 6615229346006093243}
   m_Layer: 0
-  m_Name: "\u76D7\u8CCA\u53F3\u624B"
+  m_Name: RightHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -179,7 +179,7 @@ GameObject:
   - component: {fileID: 4923637407532915701}
   - component: {fileID: 1797258541325471135}
   m_Layer: 0
-  m_Name: "\u76D7\u8CCA\u629C\u304F\u59FF"
+  m_Name: Thief
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -266,7 +266,7 @@ GameObject:
   - component: {fileID: 5612806594529525922}
   - component: {fileID: 2013369648572593475}
   m_Layer: 0
-  m_Name: "\u76D7\u8CCA\u75B2\u5F0A\u9854"
+  m_Name: Face
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
