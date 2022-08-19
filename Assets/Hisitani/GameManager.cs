@@ -81,7 +81,7 @@ public class GameManager : MonoBehaviour
 
     void GameClear()
     {
-       // SceneManager.LoadScene("GameClearScene");
+       SceneManager.LoadScene("GameClearScene");
         Debug.Log("ƒNƒŠƒA");
     }
     public void GameOver()
