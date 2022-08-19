@@ -14,12 +14,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] Fade _fadeInPrefab = default;
     [SerializeField] Fade _fadeOutPrefab = default;
     [SerializeField, Tooltip("勇者,商人,盗賊のプレハブをアタッチ")]
-    BraveStamina[] _waitChallengers = default;
-    [SerializeField, Tooltip("引き抜くスプライト")]
-    FallChallenger[] _fallChallenger = default;
-
-    Transform _spawnPoint = default;
-    Transform _spwanPoint1 = default;
+    BraveStamina[] _challengers = default;
     /// <summary>現在の挑戦中の挑戦者 </summary>
     BraveStamina _currentChallenger = default;
     bool _isGame = false;
@@ -60,24 +55,19 @@ public class GameManager : MonoBehaviour
     }
 
     /// <summary>残り人数を減らし、次の挑戦者を決める </summary>
-    public FallChallenger ReduceChallenger()
+    public void ReduceChallenger()
     {
         _nokori--;
-        // return SetNextChallenger();
-        return null;
+        SetNextChallenger();
     }
 
     /// <summary>ランダムで次の挑戦者を決める </summary>
-    public FallChallenger SetNextChallenger()
+    public void SetNextChallenger()
     {
-        //var index = Random.Range(0, _challengers.Length);
-        var index = 0;
-        _currentChallenger = _waitChallengers[index];
-        Instantiate(_currentChallenger, _spawnPoint.position, Quaternion.identity);
-        var FallChallenger = Instantiate(_fallChallenger[0], _spwanPoint1.position, Quaternion.identity);
-        Debug.Log(_waitChallengers[index].gameObject.name);
-
-        return FallChallenger;
+        var index = Random.Range(0, _challengers.Length);
+        _currentChallenger = _challengers[index];
+        Instantiate(_currentChallenger);
+        Debug.Log(_challengers[index].gameObject.name);
     }
 
     /// <summary>フェードアウトオブジェクトを生成する </summary>
@@ -86,14 +76,12 @@ public class GameManager : MonoBehaviour
         if (scene.name == "GameScene")
         {
             Instantiate(_fadeOutPrefab);
-            _spawnPoint = GameObject.Find("WaitSpawnPoint").transform;
-            _spwanPoint1 = GameObject.Find("SpawnPoint").transform;
         }
     }
 
     void GameClear()
     {
-        SceneManager.LoadScene("GameClearScene");
+       SceneManager.LoadScene("GameClearScene");
         Debug.Log("クリア");
     }
     public void GameOver()
