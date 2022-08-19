@@ -11,6 +11,7 @@ public class SwordStamina : MonoBehaviour
     [SerializeField] float _reduceTime = 1f;
     [SerializeField] Slider sli;
 
+    bool _isFall = true;
     bool _dead = false;
     float _currentStamina = 0f;
     float _time = 0f;
