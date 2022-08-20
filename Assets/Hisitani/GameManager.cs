@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] string _gameoverscene;
     [SerializeField] Fade _fadeInPrefab = default;
     [SerializeField] Fade _fadeOutPrefab = default;
+    [SerializeField] SwordStamina _sword;
     [SerializeField, Tooltip("勇者,商人,盗賊のプレハブをアタッチ")]
     BraveStamina[] _challengers = default;
     /// <summary>現在の挑戦中の挑戦者 </summary>
@@ -23,6 +24,7 @@ public class GameManager : MonoBehaviour
     GameObject[] _gameSceneChallengers = new GameObject[3];
     public int Noruma { get => _noruma; set => _noruma = value; }
     public bool IsGame { get => _isGame; set => _isGame = value; }
+    public int Nokori { get => _nokori; }
 
     private void Awake()
     {
@@ -88,6 +90,7 @@ public class GameManager : MonoBehaviour
         if (scene.name == "GameScene")
         {
             Instantiate(_fadeOutPrefab);
+            Instantiate(_sword);
             _nokoriText = GameObject.Find("nokoriText").GetComponent<Text>();
             var Brave = GameObject.Find("Brave");
             var Merchant = GameObject.Find("Merchant");
@@ -104,14 +107,13 @@ public class GameManager : MonoBehaviour
         }
         else if (scene.name == "TitleScene")
         {
-            _nokori = 10;
+            _nokori = 1;
             var startButton = GameObject.Find("StartButton").GetComponent<Button>();
             startButton.onClick.AddListener(() => GameSceneChange());
         }
         else if (scene.name == "GameOverScene")
         {
-            var ninzu = GameObject.Find("ninzuu").GetComponent<Text>();
-            ninzu.text = _nokori.ToString();
+            _isGame = false;
         }
     }
 
@@ -119,6 +121,7 @@ public class GameManager : MonoBehaviour
     {
        SceneManager.LoadScene("GameClearScene");
         Debug.Log("クリア");
+        _isGame = false;
     }
     public void GameOver()
     {
